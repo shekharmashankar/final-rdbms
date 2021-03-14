@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+
+<body>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/orders.css">
+
+    <body>
+        <div class="main-content">
+            <div class="container mt-7">
+                <!-- Table -->
+                <h2 class="mb-5">Orders Tracking Page</h2>
+                <div class="sagar">
+                    <div class="col-md-3 col-sm-3 col-xs-6"> <a href="/placeOrder" class="btn btn-sm animated-button thar-three">Place a
+                            new
+                            order</a>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" class="btn btn-sm animated-button thar-four">Log Out</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow">
+                            <div class="card-header border-0">
+                                <h3 class="mb-0">You can track your orders here...</h3>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table align-items-center table-flush">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col">Full Name</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">Time of Day</th>
+                                            <th scope="col">Pickup Location</th>
+                                            <th scope="col">Drop Location</th>
+                                            <th scope="col">Extra Messages</th>
+                                        </tr>
+                                    </thead>
+                                    <% records.forEach(function(row){ %>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">
+                                                <div class="media align-items-center">
+                                                    <div class="media-body">
+                                                        <p class="mb-0 text-sm">
+                                                            <%= row.firstandlastname %>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <td>
+                                                <%= row.Pricing %>
+                                            </td>
+                                            <td>
+                                                <%= row.Date %>
+                                            </td>
+                                            <td>
+                                                <p class="badge badge-dot mr-4">
+                                                    <%= row.PickupState %>, <%= row.PickupCity %>
+                                                
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <div class="avatar-group">
+                                                    <%= row.DropState %>, <%= row.DropCity %>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <p class="mr-2">
+                                                        <%= row.extraMessages %>
+                                                    </p>
+                                                    <div>
+                                                    
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                    <% }) %>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+    </body>
+</body>
+
+</html>
